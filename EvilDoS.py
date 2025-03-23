@@ -7,30 +7,37 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def print_banner():
-    banner = """
-    ███████╗██╗   ██╗██╗██╗     ██████╗  ██████╗ ███████╗
-    ██╔════╝██║   ██║██║██║     ██╔══██╗██╔═══██╗██╔════╝
-    █████╗  ██║   ██║██║██║     ██   ██║██║   ██║███████╗
-    ██╔══╝  ██║   ██║██║██║     ██   ██║██║   ██║╚════██║
-    ███████╗╚██████╔╝██║███████╗██████║ ╚██████╔╝███████║
-    ╚══════╝ ╚═════╝ ╚═╝╚══════╝╚═════╝  ╚═════╝ ╚══════╝
+    banner = f"""
+    {Fore.RED}███████╗██╗   ██╗██╗██╗     ██████╗  ██████╗ ███████╗
+    {Fore.RED}██╔════╝██║   ██║██║██║     ██╔══██╗██╔═══██╗██╔════╝
+    {Fore.GRAY}█████╗  ██║   ██║██║██║     ██████╔╝██║   ██║███████╗
+    {Fore.GRAY}██╔══╝  ██║   ██║██║██║     ██╔═══╝ ██║   ██║╚════██║
+    {Fore.WHITE}███████╗╚██████╔╝██║███████╗██║     ╚██████╔╝███████║
+    {Fore.WHITE}╚══════╝ ╚═════╝ ╚═╝╚══════╝╚═╝      ╚═════╝ ╚══════╝
 
-    EvilDoS v1.1
+    {Fore.YELLOW}EvilDoS v1.1
     ----------------------------------------------------
-    This tool is for ethical use only. Unauthorized use
+    {Fore.GREEN}This tool is for ethical use only. Unauthorized use
     is illegal and punishable by law.
     ----------------------------------------------------
     """
     print(banner)
 
+
 def print_menu():
-    menu = """
-    Method
+    menu = f"""
+    {Fore.CYAN}Method
     1] Minecraft
     2] TCP
     3] UDP
     """
     print(menu)
+
+def get_random_proxy():
+    # This function should return a random proxy from a list of proxies.
+    # For the purposes of this example, it returns None.
+    # In a real-world scenario, you would implement this to return actual proxy addresses.
+    return None
 
 def perform_dos(target_ip, target_port, method):
     packet_count = 0
@@ -79,7 +86,7 @@ def perform_dos(target_ip, target_port, method):
 
 def print_stats(packet_count, bytes_sent, target_ip, target_port):
     elapsed_time = time.time() - start_time
-    print(f"Packets sent: {packet_count} | Bytes sent: {bytes_sent} | Target IP: {target_ip} | Target Port: {target_port} | Elapsed Time: {elapsed_time:.2f} seconds", end='\r')
+    print(f"{Fore.MAGENTA}Packets sent: {packet_count} | Bytes sent: {bytes_sent} | Target IP: {target_ip} | Target Port: {target_port} | Elapsed Time: {elapsed_time:.2f} seconds", end='\r')
 
 def main():
     clear_screen()

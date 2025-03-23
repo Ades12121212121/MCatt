@@ -53,10 +53,10 @@ EvilDoS es una herramienta avanzada de denegación de servicio desarrollada con 
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/username/EvilDoS.git
+git clone https://github.com/Ades12121212121/MCatt.git
 
 # Acceder al directorio
-cd EvilDoS
+cd MCatt
 
 # Instalar dependencias
 pip install -r requirements.txt
